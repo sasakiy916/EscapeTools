@@ -19,6 +19,7 @@ public class NumberRock : MonoBehaviour
     public void IncreaseNum(int index)
     {
         numbers[index] = ++numbers[index] % (MAXNUM + 1);
+        SetNumbers();
     }
 
     void Start()

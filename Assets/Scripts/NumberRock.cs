@@ -38,13 +38,12 @@ public class NumberRock : MonoBehaviour
         return true;
     }
 
+    // Numberオブジェクトのアタッチ、それに合わせてフィールドの配列要素数変更
     public void AttachNumberTextObject()
     {
-        numberTexts = new TextMeshPro[this.transform.GetChild(0).GetChild(0).childCount];
-        for (int i = 0; i < numberTexts.Length; i++)
-        {
-            numberTexts[i] = this.transform.GetChild(0).GetChild(0).GetChild(i).GetChild(0).GetComponent<TextMeshPro>();
-        }
+        numberTexts = GetComponentsInChildren<TextMeshPro>();
+        numbers = new int[numberTexts.Length];
+        correctNumbers = new int[numberTexts.Length];
     }
 
     public class Quiz

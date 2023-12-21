@@ -25,9 +25,9 @@ public class ItemManagerEditor : Editor
             // ItemManager itemManager = (ItemManager)target;
 
             // 全てのItemSlotにあるImageコンポーネントを取得
-            List<Image> itemSlotsList = new();
-            Image[] itemSlots = itemManager.ItemListPanel.GetComponentsInChildren<Image>();
-            foreach (Image itemSlot in itemSlots)
+            List<ItemSlot> itemSlotsList = new();
+            ItemSlot[] itemSlots = itemManager.ItemListPanel.GetComponentsInChildren<ItemSlot>();
+            foreach (ItemSlot itemSlot in itemSlots)
             {
                 if (itemSlot.transform == itemManager.ItemListPanel) continue;
                 itemSlotsList.Add(itemSlot);

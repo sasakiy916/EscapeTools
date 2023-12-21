@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class ItemManager : MonoBehaviour
 {
-    [SerializeField] Image[] itemSlots;
+    [SerializeField] ItemSlot[] itemSlots;
     [SerializeField] Transform itemListPanel;
-    public Image[] ItemSlots
+    public ItemSlot[] ItemSlots
     {
         get => itemSlots;
         set { itemSlots = value; }
@@ -15,6 +15,14 @@ public class ItemManager : MonoBehaviour
     public Transform ItemListPanel
     {
         get => itemListPanel;
+    }
+
+    public void PickUp(Item item)
+    {
+        foreach (ItemSlot slot in itemSlots)
+        {
+            if (slot.Set(item)) return;
+        }
     }
 
     void Start()

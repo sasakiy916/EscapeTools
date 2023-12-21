@@ -38,6 +38,19 @@ public class NumberRock : MonoBehaviour
         return true;
     }
 
+    public void AttachNumberTextObject()
+    {
+        numberTexts = new TextMeshPro[this.transform.GetChild(0).GetChild(0).childCount];
+        for (int i = 0; i < numberTexts.Length; i++)
+        {
+            numberTexts[i] = this.transform.GetChild(0).GetChild(0).GetChild(i).GetChild(0).GetComponent<TextMeshPro>();
+        }
+    }
+
+    public class Quiz
+    {
+
+    }
     void Start()
     {
 

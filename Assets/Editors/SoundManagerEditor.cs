@@ -31,6 +31,7 @@ public class SoundManagerEditor : Editor
         // インスペクタの値が変更されたら
         if (EditorGUI.EndChangeCheck())
         {
+            if (selectedBGM == -1 && soundManager.Audios[0] != null) selectedBGM = 0;
             // ドロップダウンで選択したBGMをAuidoClipにセット
             soundManager.SetAuidoBGM(selectedBGM);
         }

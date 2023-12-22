@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -322,8 +322,8 @@ GameObject:
   m_Component:
   - component: {fileID: 88785276}
   m_Layer: 0
-  m_Name: CameraPosition (2)
-  m_TagString: Untagged
+  m_Name: CameraPosition
+  m_TagString: RoomCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -336,13 +336,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88785275}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3.28, y: 1, z: -1.99}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 8, y: 1.5, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1036209018}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 264329494}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &154471256 stripped
 MonoBehaviour:
@@ -431,6 +431,7 @@ Transform:
   m_Children:
   - {fileID: 893202736}
   - {fileID: 1333908840}
+  - {fileID: 88785276}
   m_Father: {fileID: 2639963256057104424}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &441819887
@@ -944,7 +945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audios:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 393a9fbf18de4ad42957c64bd4e446f8, type: 3}
 --- !u!82 &754860110
 AudioSource:
   m_ObjectHideFlags: 0
@@ -955,7 +956,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2509522969175442117, guid: 1b94b590b41855546af71db3df1ddef9, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 393a9fbf18de4ad42957c64bd4e446f8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1511,6 +1512,7 @@ Transform:
   m_Children:
   - {fileID: 583209126}
   - {fileID: 199111444}
+  - {fileID: 1231435752}
   m_Father: {fileID: 2639963256057104424}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
@@ -1795,7 +1797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1036209018
 Transform:
   m_ObjectHideFlags: 0
@@ -1880,7 +1882,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 110
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2265,14 +2267,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231435751}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.62, y: 1, z: -1.99}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1009428673}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_Father: {fileID: 935834625}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1329242099 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8692214725711051474, guid: 357d1d2ddbfb00f45b3ef40773a6382d, type: 3}
@@ -6373,5 +6375,3 @@ SceneRoots:
   - {fileID: 2639963256057104424}
   - {fileID: 5670538}
   - {fileID: 996061887}
-  - {fileID: 1231435752}
-  - {fileID: 88785276}

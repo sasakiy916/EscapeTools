@@ -7,9 +7,10 @@ public class CameraControllerEditor : Editor
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        if (EditorGUILayout.LinkButton("ボタン"))
+        if (GUILayout.Button("ボタン"))
         {
-
+            CameraController cameraController = (CameraController)target;
+            cameraController.transform.Rotate(0, 90, 0);
         }
     }
 }

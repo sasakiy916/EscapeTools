@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int positionIndex;
+    public Transform[] cameraPositions;
+
+    public void MovePosition()
     {
-        
+        positionIndex = ++positionIndex % cameraPositions.Length;
+        Camera.main.transform.SetParent(cameraPositions[positionIndex]);
+        Camera.main.transform.localPosition = Vector3.zero;
+        Camera.main.transform.localRotation = Quaternion.identity;
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+
+    }
+
     void Update()
     {
-        
+
     }
 }

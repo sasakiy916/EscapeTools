@@ -15,7 +15,8 @@ public class CameraControllerEditor : Editor
         base.OnInspectorGUI();
         if (GUILayout.Button("90度回転"))
         {
-            cameraController.transform.parent.Rotate(0, 90, 0);
+            // cameraController.transform.parent.Rotate(0, 90, 0);
+            cameraController.RotateCameraPosition();
         }
 
         if (GUILayout.Button("部屋移動"))

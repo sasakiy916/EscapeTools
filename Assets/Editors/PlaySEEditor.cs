@@ -36,7 +36,7 @@ public class PlaySEEditor : Editor
         else
         {
             selectedBGM = -1;
-            EditorGUILayout.LabelField("SEが１つもありません");
+            GUILayout.Label("SoundMangerにSEを登録してください");
         }
 
 

@@ -27,12 +27,18 @@ public class PlaySEEditor : Editor
                 selectedBGM,
                 soundManager.GetSENames()
             );
+
+            if (GUILayout.Button("再生"))
+            {
+                soundManager.PlaySE(soundManager.SEAudios[selectedBGM]);
+            }
         }
         else
         {
             selectedBGM = -1;
             EditorGUILayout.LabelField("SEが１つもありません");
         }
+
 
         // インスペクタの値が変更されたら
         if (EditorGUI.EndChangeCheck())

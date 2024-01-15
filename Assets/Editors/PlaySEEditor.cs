@@ -1,38 +1,37 @@
 using UnityEngine;
 using UnityEditor;
-using Unity.VisualScripting;
 
-[CustomEditor(typeof(SoundManager))]
-public class SoundManagerEditor : Editor
+[CustomEditor(typeof(PlaySE))]
+public class PlaySEEditor : Editor
+
 {
-    int selectedBGM = 1;
+    int selectedBGM = 0;
     SoundManager soundManager;
-
     void Awake()
     {
-        soundManager = (SoundManager)target;
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 
     public override void OnInspectorGUI()
     {
         EditorGUI.BeginChangeCheck();
-
-        // 通常のインスペクタ表示
         base.OnInspectorGUI();
 
+        // PlaySE playSE = (PlaySE)target;
         // BGM一覧のドロップダウン表示
-        if (soundManager.Audios.Length != 0)
+        if (soundManager.SEAudios.Length != 0)
         {
             selectedBGM = EditorGUILayout.Popup(
                 // new GUIContent("ドロップダウン"),
-                "BGM一覧",
+                "使用SE",
                 selectedBGM,
-                soundManager.GetAudioNames()
+                soundManager.GetSENames()
             );
         }
         else
         {
             selectedBGM = -1;
+            EditorGUILayout.LabelField("SEが１つもありません");
         }
 
         // インスペクタの値が変更されたら

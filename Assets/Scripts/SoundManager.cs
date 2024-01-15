@@ -11,9 +11,14 @@ public class SoundManager : MonoBehaviour
     AudioSource bgm;
     AudioSource se;
     [SerializeField] AudioClip[] audios;
+    [SerializeField] AudioClip[] seAudios;
     public AudioClip[] Audios
     {
         get => this.audios;
+    }
+    public AudioClip[] SEAudios
+    {
+        get => this.seAudios;
     }
 
     void Start()
@@ -27,6 +32,11 @@ public class SoundManager : MonoBehaviour
 
     }
 
+    public void PlaySE(AudioClip se)
+    {
+        this.se.PlayOneShot(se);
+    }
+
     public string[] GetAudioNames()
     {
         List<string> auidoNames = new();
@@ -36,6 +46,17 @@ public class SoundManager : MonoBehaviour
             auidoNames.Add(this.audios[i].name);
         }
         return auidoNames.ToArray();
+    }
+
+    public string[] GetSENames()
+    {
+        List<string> seNames = new();
+        for (int i = 0; i < this.seAudios.Length; i++)
+        {
+            if (this.seAudios[i] == null) continue;
+            seNames.Add(this.seAudios[i].name);
+        }
+        return seNames.ToArray();
     }
 
     public void SetAuidoBGM(int selected)
@@ -80,6 +101,7 @@ public class SoundManager : MonoBehaviour
             }
         }
     }
+
     // シングルトン化
     void ToSingleton()
     {

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Door
   - RoomCamera
+  - LiddleCamera
   layers:
   - Default
   - TransparentFX

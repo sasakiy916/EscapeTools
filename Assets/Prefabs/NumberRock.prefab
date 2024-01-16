@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e6f9dc05f77c14c8469f914aceca56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctNumbers: 09000000090000000900000009000000
+  correctNumbers: 00000000000000000000000000000000
   numbers: 00000000000000000000000000000000
   numberTexts:
   - {fileID: 4442171045806981713}

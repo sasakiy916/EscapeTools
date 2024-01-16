@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,9 +19,14 @@ public class CameraController : MonoBehaviour
         Camera.main.transform.localScale = Vector3.one;
     }
 
+    public void RotateCameraPosition(Boolean isRight)
+    {
+        cameraPositions[positionIndex].Rotate(0.0f, isRight ? 90.0f : -90.0f, 0.0f);
+    }
+
     public void RotateCameraPosition()
     {
-        cameraPositions[positionIndex].Rotate(0.0f, 90.0f, 0.0f);
+        RotateCameraPosition(true);
     }
 
     void Start()

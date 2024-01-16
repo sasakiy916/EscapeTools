@@ -5,6 +5,14 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public enum Room
+    {
+        Blue,
+        Purple,
+        Green
+    }
+
+    Room room;
     public int positionIndex;
     public Transform[] cameraPositions;
 
@@ -16,6 +24,16 @@ public class CameraController : MonoBehaviour
         // ローカル座標などを初期化
         Camera.main.transform.localPosition = Vector3.zero;
         Camera.main.transform.localRotation = Quaternion.identity;
+        Camera.main.transform.localScale = Vector3.one;
+    }
+
+    public void MovePosition(Room room)
+    {
+        positionIndex = (int)room;
+        Camera.main.transform.SetParent(cameraPositions[positionIndex]);
+
+        Camera.main.transform.localPosition = Vector3.zero;
+        // Camera.main.transform.localRotation = Quaternion.identity;
         Camera.main.transform.localScale = Vector3.one;
     }
 
@@ -31,7 +49,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-
+        Enum.Parse(typeof(Room), "Purple");
     }
 
     void Update()
